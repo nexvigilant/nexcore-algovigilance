@@ -1,0 +1,42 @@
+
+[package]
+name = "nexcore-algovigilance"
+version = "1.0.0"
+edition = "2024"
+authors = ["NexVigilant Team <team@nexvigilant.com>"]
+license = "LicenseRef-Proprietary"
+repository = "https://github.com/nexvigilant/nexcore"
+rust-version = "1.85"
+description = "Algorithmic vigilance: ICSR deduplication, signal triage with decay, and federated persistence"
+keywords = ["pharmacovigilance", "deduplication", "signal-detection", "triage", "decay"]
+categories = ["algorithms", "science"]
+
+[dependencies]
+nexcore-error = { workspace = true }
+# NexCore internal
+nexcore-dtree = { version = "1.0.0", path = "../nexcore-dtree", registry = "nexcore" }
+nexcore-lex-primitiva = { version = "0.1.0", path = "../nexcore-lex-primitiva", registry = "nexcore" }
+nexcore-proof-of-meaning = { workspace = true }
+
+# Serialization
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = { version = "1.0.120" }
+
+# Error handling
+
+# Date/time and IDs
+nexcore-chrono = { workspace = true }
+
+# Parallelism
+rayon = { version = "1.10.0" }
+
+# Home directory
+nexcore-fs = { workspace = true }
+
+[dev-dependencies]
+tempfile = { version = "3.10.1" }
+tokio = { version = "1.38.0", features = ["full"] }
+
+
+[lints]
+workspace = true
